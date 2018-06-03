@@ -4,9 +4,9 @@ var webpack = require('webpack')
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname, './'),
+    publicPath: '/',
+    filename: './js/build.js'
   },
   module: {
     rules: [
@@ -64,6 +64,8 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
+          publicPath: '/',
+          outputPath: 'imgs/',
           name: '[name].[ext]?[hash]'
         }
       }
